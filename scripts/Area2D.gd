@@ -8,6 +8,6 @@ func _on_Area_Trigger_body_entered(body):
 		if current_scene == sceneName:
 			global.lives -=1
 		if (global.lives == 0):
-			get_tree().change_scene(str("res://scenes/Game Over.tscn"))
+			SceneTransition.change_scene(str("res://scenes/Game Over.tscn"))
 		else:
-			get_tree().change_scene(str("res://scenes/" + sceneName + ".tscn"))
+			SceneTransition.change_scene(str("res://scenes/" + sceneName + ".tscn"), "fadeout")

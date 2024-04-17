@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Fonts/CustomFont2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Pause.gd" type="Script" id=2]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.164706, 0.145098, 0.145098, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 422.0
+margin_top = 186.0
+margin_right = 602.0
+margin_bottom = 414.0
+custom_constants/separation = 21
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 1 )
+text = "Paused"
+align = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 180.0
+margin_bottom = 72.0
+
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 93.0
+margin_right = 180.0
+margin_bottom = 150.0
+custom_fonts/font = ExtResource( 1 )
+text = "Resume"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 249.0
+margin_right = 180.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Fonts/CustomFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" type="Texture" id=2]
 [ext_resource path="res://assets/Fonts/CustomFont2.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/NewGame.gd" type="Script" id=4]
 [ext_resource path="res://scripts/StageSelect.gd" type="Script" id=5]
+[ext_resource path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_land.png" type="Texture" id=6]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
@@ -13,6 +14,12 @@ custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
 custom_constants/margin_bottom = 80
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.839216 )
+scale = Vector2( 1, 0.589844 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 120.0
@@ -27,6 +34,7 @@ margin_bottom = 440.0
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_right = 288.0
 margin_bottom = 247.0
+custom_colors/font_color = Color( 0.180392, 0.164706, 0.164706, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Alien 
 Alien"
