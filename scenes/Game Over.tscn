@@ -20,7 +20,7 @@ size_flags_vertical = 3
 custom_constants/separation = 19
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="GameOver" type="Label" parent="VBoxContainer"]
 margin_top = 204.0
 margin_right = 616.0
 margin_bottom = 326.0
@@ -29,13 +29,18 @@ text = "GAME OVER"
 align = 1
 valign = 1
 
-[node name="BackToMenu" type="LinkButton" parent="VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 345.0
 margin_right = 616.0
 margin_bottom = 396.0
+
+[node name="BackButton" type="LinkButton" parent="VBoxContainer/CenterContainer"]
+margin_left = 157.0
+margin_right = 458.0
+margin_bottom = 51.0
 custom_fonts/font = ExtResource( 2 )
 text = "Back To Menu"
 script = ExtResource( 3 )
 scene_to_load = "MainMenu"
 
-[connection signal="pressed" from="VBoxContainer/BackToMenu" to="VBoxContainer/BackToMenu" method="_on_BackToMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/BackButton" to="VBoxContainer/CenterContainer/BackButton" method="_on_BackButton_pressed"]
